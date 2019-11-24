@@ -1,0 +1,25 @@
+{
+  "name": "electron-tools",
+  "version": "1.0.0",
+  "description": "Tools to make your life easier while making an electron application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/77Z/electron-tools.git"
+  },
+  "keywords": [
+    "electron",
+    "tools",
+    "electron-tools",
+    "vn20"
+  ],
+  "author": "Vince Richter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/77Z/electron-tools/issues"
+  },
+  "homepage": "https://github.com/77Z/electron-tools#readme"
+}
