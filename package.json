@@ -17,7 +17,7 @@
     "vn20"
   ],
   "dependencies": {
-    "electron"
+    "electron": "latest"
   },
   "author": "Vince Richter",
   "license": "MIT",
