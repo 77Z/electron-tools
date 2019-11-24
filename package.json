@@ -1,6 +1,6 @@
 {
   "name": "electron-tools",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tools to make your life easier while making an electron application",
   "main": "index.js",
   "scripts": {
