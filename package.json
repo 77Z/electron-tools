@@ -1,6 +1,6 @@
 {
   "name": "electron-tools",
-  "version": "1.1.1",
+  "version": "1.0.1",
   "description": "Tools to make your life easier while making an electron application",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,9 @@
     "electron-tools",
     "vn20"
   ],
+  "dependencies": {
+    "electron"
+  },
   "author": "Vince Richter",
   "license": "MIT",
   "bugs": {
