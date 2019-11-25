@@ -1,56 +1,28 @@
 {
-  "_from": "electron-tools@^1.0.1",
-  "_id": "electron-tools@1.0.2",
-  "_inBundle": false,
-  "_integrity": "sha512-xhV5cLTZjvUebbRaw24i46R9lq7X9w0hhxHSKPAjTSKEI5Xp0bDe6cHRug4TtPRJlASCR/8zdtaQxUn9kzPjJQ==",
-  "_location": "/electron-tools",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "electron-tools@^1.0.1",
-    "name": "electron-tools",
-    "escapedName": "electron-tools",
-    "rawSpec": "^1.0.1",
-    "saveSpec": null,
-    "fetchSpec": "^1.0.1"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/electron-tools/-/electron-tools-1.0.2.tgz",
-  "_shasum": "97e73997dfb0eff15c1d58cfcf58fa3423ef9192",
-  "_spec": "electron-tools@^1.0.1",
-  "_where": "C:\\Users\\r2d2f\\OneDrive\\Documents\\Electron Projects\\test",
-  "author": {
-    "name": "Vince Richter"
-  },
-  "bugs": {
-    "url": "https://github.com/77Z/electron-tools/issues"
-  },
-  "bundleDependencies": false,
-  "dependencies": {
-    "electron": "latest"
-  },
-  "deprecated": false,
+  "name": "electron-tools",
   "description": "Tools to make your life easier while making an electron application",
-  "homepage": "https://github.com/77Z/electron-tools#readme",
+  "version": "2.2.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/77Z/electron-tools.git"
+  },
   "keywords": [
     "electron",
     "tools",
     "electron-tools",
     "vn20"
   ],
+  "dependencies": {
+      "electron": "latest"
+  },
+  "author": "Vince Richter",
   "license": "MIT",
-  "main": "index.js",
-  "name": "electron-tools",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/77Z/electron-tools.git"
+  "bugs": {
+    "url": "https://github.com/77Z/electron-tools/issues"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "2.0.1"
+  "homepage": "https://github.com/77Z/electron-tools#readme"
 }

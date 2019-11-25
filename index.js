@@ -62,5 +62,24 @@ module.exports = {
     },
     simulateKeypress: function(keys) {
         child_process.exec("cscript.exe node_modules\\electron-tools\\keypress.vbs /keys:" + keys);
+    },
+    screenshot: function() {
+
+
+        //TODO: ADD SCREENSHOT FUNCTION
+
+
+    },
+    click: function(mousebtn, x, y) {
+        if (typeof mousebtn !== "string") throw new TypeError("Must be string left or right");
+        if (typeof x !== "number" || typeof y !== "number") throw new TypeError("x and/or y must be integers");
+
+        if (mousebtn == "left") {
+            child_process.exec("node_modules\\electron-tools\\aet.exe --mouseClick " + x + " " + y);
+        } else if (mousebtn == "right") {
+            //TODO: add rightclick function in C#
+        } else {
+            throw new TypeError("mousebtn must be left or right");
+        }
     }
 };

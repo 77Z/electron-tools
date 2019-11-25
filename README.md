@@ -55,4 +55,6 @@ Functions:
 | openTerminal | Opens the command prompt                         | none                |
 | runCommand   | Runs a command in the terminal                   | string commandToRun |
 | simulateKeypress | Presses a key on the users keyboard. Spacebar is not yet supported| string keys |
+| screenshot(not done) | Takes a screenshot                       | none                |
+| click (beta) | Not enough testing has been done. Makes the user click on a specific pixel | mousebtn(only left supported right now) string(left or right), int x, int y |
 
