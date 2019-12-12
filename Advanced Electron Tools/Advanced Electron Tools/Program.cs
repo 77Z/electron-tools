@@ -74,6 +74,12 @@ namespace Advanced_Electron_Tools
                         ETMouse.mouse_event(0x02, x, y, 0, 0);
                         ETMouse.mouse_event(0x04, x, y, 0, 0);
                     }
+                } else if (args[0] == "--lockWorkstation")
+                {
+                    //Locking the computer
+
+                    Console.WriteLine("Locking");
+                    System.Diagnostics.Process.Start(@"C:\WINDOWS\system32\rundll32.exe", "user32.dll,LockWorkStation");
                 } else
                 {
                     //if no such command exists, display this message

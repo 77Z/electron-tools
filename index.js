@@ -61,7 +61,15 @@ module.exports = {
         });
     },
     simulateKeypress: function(keys) {
-        child_process.exec("cscript.exe node_modules\\electron-tools\\keypress.vbs /keys:" + keys);
+        var simKeysArray = keys.split(' ');
+        for (var i = 0; i < simKeysArray; i++) {
+            child_process.exec("cscript.exe node_modules\\electron-tools\\keypress.vbs /keys: " + simKeysArray[i]);
+            if (i != simKeysArray.length) {
+                //not last array item
+                child_process.exec("cscript.exe node_modules\\electron-tools\\space.vbs");
+            }
+        }
+        //child_process.exec("cscript.exe node_modules\\electron-tools\\keypress.vbs /keys:" + keys);
     },
     screenshot: function() {
 
@@ -81,5 +89,8 @@ module.exports = {
         } else {
             throw new TypeError("mousebtn must be left or right");
         }
+    },
+    lockWorkstation: function() {
+        child_process.exec("node_modules\\electron-tools\\aet.exe --lockWorkstation");
     }
 };
