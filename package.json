@@ -1,7 +1,7 @@
 {
   "name": "electron-tools",
   "description": "Tools to make your life easier while making an electron application",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,7 +17,7 @@
     "vn20"
   ],
   "dependencies": {
-      "electron": "latest"
+    "electron": "latest"
   },
   "author": "Vince Richter",
   "license": "MIT",
