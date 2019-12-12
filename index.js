@@ -16,8 +16,16 @@ module.exports = {
             shell.showItemInFolder(dir);
         }
     },
-    getPrimaryDisplaySize: function() {
-        return screen.getPrimaryDisplay().size;
+    getPrimaryDisplaySize: function(hORw) {
+        var screen = screen.getPrimaryDisplay().size;
+        if (typeof hORw != "string") throw new TypeError("Must be string!");
+        if (hORw == "height") {
+            return screen.height;
+        } else if (hORw == "width") {
+            return screen.width;
+        } else {
+            throw new Error();
+        }
     },
     moveMouse: function(x, y) {
         if (typeof x !== "number" || typeof y !== "number") throw new TypeError("Only numbers are accepted");
