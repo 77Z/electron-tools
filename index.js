@@ -30,7 +30,7 @@ module.exports = {
     moveMouse: function(x, y) {
         if (typeof x !== "number" || typeof y !== "number") throw new TypeError("Only numbers are accepted");
 
-        child_process.exec("node_modules\\electron-tools\\aet.exe --moveMouse " + x + " " + y, (error, stdout, stderr) => {
+        child_process.exec(__dirname + "\\aet.exe --moveMouse " + x + " " + y, (error, stdout, stderr) => {
             if (error) {
                 console.error(`execute error: ${error}`);
             }
@@ -71,10 +71,10 @@ module.exports = {
     simulateKeypress: function(keys) {
         var simKeysArray = keys.split(' ');
         for (var i = 0; i < simKeysArray; i++) {
-            child_process.exec("cscript.exe node_modules\\electron-tools\\keypress.vbs /keys: " + simKeysArray[i]);
+            child_process.exec(`cscript.exe ${__dirname}\\keypress.vbs /keys: ` + simKeysArray[i]);
             if (i != simKeysArray.length) {
                 //not last array item
-                child_process.exec("cscript.exe node_modules\\electron-tools\\space.vbs");
+                child_process.exec(`cscript.exe ${__dirname}\\space.vbs`);
             }
         }
         //child_process.exec("cscript.exe node_modules\\electron-tools\\keypress.vbs /keys:" + keys);
@@ -91,7 +91,7 @@ module.exports = {
         if (typeof x !== "number" || typeof y !== "number") throw new TypeError("x and/or y must be integers");
 
         if (mousebtn == "left") {
-            child_process.exec("node_modules\\electron-tools\\aet.exe --mouseClick " + x + " " + y);
+            child_process.exec(__dirname + "\\aet.exe --mouseClick " + x + " " + y);
         } else if (mousebtn == "right") {
             //TODO: add rightclick function in C#
         } else {
@@ -99,6 +99,6 @@ module.exports = {
         }
     },
     lockWorkstation: function() {
-        child_process.exec("node_modules\\electron-tools\\aet.exe --lockWorkstation");
+        child_process.exec(__dirname + "\\aet.exe --lockWorkstation");
     }
 };
