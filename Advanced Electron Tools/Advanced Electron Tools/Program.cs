@@ -80,6 +80,61 @@ namespace Advanced_Electron_Tools
 
                     Console.WriteLine("Locking");
                     System.Diagnostics.Process.Start(@"C:\WINDOWS\system32\rundll32.exe", "user32.dll,LockWorkStation");
+                } else if (args[0] == "--checkForWindow")
+                {
+                    //Used for checking if a window exists
+                    if (args.Length < 2)
+                    {
+                        Console.WriteLine("Not enough arguments, refer to --help");
+                    } else
+                    {
+                        if (ETWindow.WindowExists(args[1]))
+                        {
+                            Console.WriteLine("true");
+                        } else
+                        {
+                            Console.WriteLine("false");
+                        }
+                    }
+                } else if (args[0] == "--moveWindow")
+                {
+                    //Moving a window
+                    if (args.Length < 4)
+                    {
+                        Console.WriteLine("Not enough arguments, refer to --help");
+                    } else
+                    {
+                        ETWindow.MoveWindow(args[1], Int32.Parse(args[2]), Int32.Parse(args[3]));
+                    }
+                } else if (args[0] == "--getWindow")
+                {
+                    //Getting window rectangle
+                    if (args.Length < 2)
+                    {
+                        Console.WriteLine("Not enough arguments, refer to --help");
+                    } else
+                    {
+                        ETWindow.GetWindow(args[1]);
+                    }
+                } else if (args[0] == "--minimizeWindow")
+                {
+                    //Closing the specified window
+                    if (args.Length < 2)
+                    {
+                        Console.WriteLine("Not enough arguments, refer to --help");
+                    } else
+                    {
+                        ETWindow.MinimizeWindow(args[1]);
+                    }
+                } else if (args[0] == "--setWindowTitle")
+                {
+                    if (args.Length < 3)
+                    {
+                        Console.WriteLine("Not enough arguments, refer to --help");
+                    } else
+                    {
+                        ETWindow.SetWindowTitle(args[1], args[2]);
+                    }
                 } else
                 {
                     //if no such command exists, display this message

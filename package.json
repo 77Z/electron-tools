@@ -1,7 +1,7 @@
 {
   "name": "electron-tools",
   "description": "Tools to make your life easier while making an electron application",
-  "version": "2.3.2",
+  "version": "2.4.2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

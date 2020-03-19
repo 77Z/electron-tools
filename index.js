@@ -69,15 +69,7 @@ module.exports = {
         });
     },
     simulateKeypress: function(keys) {
-        var simKeysArray = keys.split(' ');
-        for (var i = 0; i < simKeysArray; i++) {
-            child_process.exec(`cscript.exe ${__dirname}\\keypress.vbs /keys: ` + simKeysArray[i]);
-            if (i != simKeysArray.length) {
-                //not last array item
-                child_process.exec(`cscript.exe ${__dirname}\\space.vbs`);
-            }
-        }
-        //child_process.exec("cscript.exe node_modules\\electron-tools\\keypress.vbs /keys:" + keys);
+        child_process.exec(`cscript.exe ${__dirname}\\keypress.vbs /keys:"${keys}"`);
     },
     screenshot: function() {
 
@@ -100,5 +92,37 @@ module.exports = {
     },
     lockWorkstation: function() {
         child_process.exec(__dirname + "\\aet.exe --lockWorkstation");
+    },
+    externalWindows: {
+        checkForWindow: function(windowName) {
+            if (typeof windowName !== "string") throw new TypeError("windowName must be a string!");
+            child_process.exec(__dirname + '\\aet.exe --checkForWindow "' + windowName + '"', (err, stdout, stderr) => {
+                if (err) throw err;
+                if (stderr) throw stderr;
+                if (stdout) {
+                    return stdout;
+                }
+            });
+        },
+        moveWindow: function(windowName, x, y) {
+            if (typeof windowName !== "string") throw new TypeError("windowName must be a string!");
+            if (typeof x !== "number" || typeof y !== "number") throw new TypeError("x and/or y must both be numbers!");
+            child_process.exec(__dirname + '\\aet.exe --moveWindow "' + windowName + '" ' + x + " " + y);
+        },
+        setWindowTitle: function(windowName, newTitle) {
+            if (typeof windowName !== "string") throw new TypeError("windowName must be a string!");
+            if (typeof newTitle !== "string") throw new TypeError("newTitle must be a string!");
+            child_process.exec(__dirname + '\\aet.exe --setWindowTitle "' + windowName + '" "' + newTitle + '"', (err, _stdout, stderr) => {
+                if (err) throw err;
+                if (stderr) throw stderr;
+            });
+        },
+        minimizeWindow: function(windowName) {
+            if (typeof windowName !== "string") throw new TypeError("windowName must be a string!");
+            child_process.exec(__dirname + '\\aet.exe --minimizeWindow "' + windowName + '"', (err, stdout, stderr) => {
+                if (err) throw err;
+                if (stderr) throw stderr;
+            });
+        }
     }
 };
